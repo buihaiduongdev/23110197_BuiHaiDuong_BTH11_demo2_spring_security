@@ -45,10 +45,12 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		return http.csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth -> auth.requestMatchers("/user/new")
-				.permitAll().requestMatchers("/").permitAll().requestMatchers("/customer/**").authenticated()
+		return http.csrf(csrf -> csrf.disable())
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/user/new").permitAll().requestMatchers("/")
+						.permitAll().requestMatchers("/customer/**").authenticated().requestMatchers("/hello")
+						.authenticated()
 //						.anyRequest().authenticated()
-		).formLogin(Customizer.withDefaults()).build();
+				).formLogin(Customizer.withDefaults()).build();
 	}
 
 }

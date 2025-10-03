@@ -17,11 +17,11 @@ import lombok.ToString;
 @ToString
 @Builder
 @Entity
-@Table(name = "UserInfo")
+@Table(name = "user_info")
 public class UserInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private int id;
 	private String name;
 	private String email;
 	private String password;
