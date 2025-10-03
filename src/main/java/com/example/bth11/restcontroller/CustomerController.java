@@ -1,4 +1,4 @@
-package com.example.bth11.Controller;
+package com.example.bth11.restcontroller;
 
 import java.util.List;
 
